@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+/* Cosmic Dark Theme for DreamLens */
+@theme {
+  /* Core palette - cosmic night theme */
+  --color-bg-primary: #0a0a1a;
+  --color-bg-secondary: #12122a;
+  --color-bg-card: #1a1a3e;
+  --color-text-primary: #e8e8f0;
+  --color-text-secondary: #9898b8;
+  --color-accent-primary: #7c6fea;
+  --color-accent-secondary: #4ecdc4;
+  --color-accent-warm: #f7b267;
+  --color-border: #2a2a4e;
+
+  /* Typography */
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Heading styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+/* Subtle cosmic background gradient */
+.cosmic-bg {
+  background:
+    radial-gradient(ellipse at top, rgba(124, 111, 234, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(78, 205, 196, 0.08) 0%, transparent 50%),
+    var(--color-bg-primary);
+}
+
+/* Dreamy glow effects */
+.glow-violet {
+  box-shadow: 0 0 40px rgba(124, 111, 234, 0.3);
+}
+
+.glow-teal {
+  box-shadow: 0 0 40px rgba(78, 205, 196, 0.3);
+}
+
+.glow-amber {
+  box-shadow: 0 0 40px rgba(247, 178, 103, 0.3);
+}
+
+/* Smooth transitions */
+.transition-dream {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background-color: rgba(124, 111, 234, 0.3);
+  color: var(--color-text-primary);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-primary);
+}
+
+/* Animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
